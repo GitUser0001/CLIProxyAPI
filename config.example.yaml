@@ -304,6 +304,14 @@ client:
 
 # Shared upstream behavior applies to OAuth and API-key credentials.
 upstream:
+  # Isolated OpenAI Decisions API credential; never used for chat/Responses.
+  # The regular key file must be private (0600 or stricter) and readable by the service.
+  # openai-decisions:
+  #   enabled: true
+  #   api-key-file: "/run/credentials/cliproxyapi.service/openai-decisions-key"
+  #   base-url: "https://api.openai.com/v1"
+  #   models: ["gpt-6-luna"]
+
   codex:
     # Experimental full-duplex Codex Responses WebSocket steering (default: false).
     # Keeps one upstream account/model per socket; accepted input is never replayed.

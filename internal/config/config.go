@@ -6,6 +6,9 @@ package config
 
 // Config represents the application's configuration, loaded from a YAML file.
 type Config struct {
+	// OpenAIDecisions uses an isolated API key exclusively for POST /v1/decisions.
+	OpenAIDecisions OpenAIDecisionsConfig `yaml:"openai-decisions" json:"openai-decisions"`
+
 	// Models selects optional catalog sources independently for each catalog.
 	Models ModelCatalogs `yaml:"models" json:"models"`
 
